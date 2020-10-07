@@ -1,0 +1,31 @@
+.index_body {
+    font-size: 100px;
+    color: white;
+    background: url('../images/web_back_image1.jpg');
+    background-repeat: no-repeat;
+}
+
+.index_main {
+    margin-top: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*padding-top: 420px;*/
+}
+.index_main-title {
+    font-family: 'Bangers', cursive;
+    margin-bottom: 100px;
+    font-size: 100px;
+}
+
+.index_main a {
+    color: white;
+}
+
+.index_main i {
+    font-size: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

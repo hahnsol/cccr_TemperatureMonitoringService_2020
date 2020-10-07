@@ -1,0 +1,76 @@
+.loginPage_body {
+    background-image: url("../images/loginPage_back_image.jpg");
+    background-repeat: no-repeat;
+}
+
+.loginPage_main {
+    margin-top: 285px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login_box {
+    background-color: rgba(250, 250, 250, 0.5);
+ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 40px;
+}
+
+.login_text {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    margin-bottom: 50px;
+    font-size: 30px;
+    font-family: 'Do Hyeon', sans-serif;
+    color: black;
+}
+
+.loginPage_insert_box {
+    display: flex;
+    flex-direction: column;
+}
+
+.loginPage_insert_box_input-frame {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 5px;
+    margin-bottom: 40px;
+    padding: 8px;
+}
+
+.loginPage_insert_box_input-frame input {
+    padding: 15px 0 15px 0;
+    border: none;
+}
+
+.login_id_inputBox1 {
+    border-bottom: 1px solid grey;
+}
+
+.loginPage_insert_box_input-frame_input1 {
+    margin-bottom: 0;
+    border-bottom: 1px solid black;
+}
+
+.loginPage_insert_box_input-frame_input2 {
+    margin-top: 0;
+}
+
+.loginPage_insert_box button {
+    border-radius: 10px;
+    padding: 8px;
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 20px;
+    background-color: #813e90;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}

@@ -23,6 +23,6 @@ spring:
   datasource:
     hikari:
       driverClassName: com.mysql.cj.jdbc.Driver
-      jdbc-url: jdbc:mysql://13.209.26.83:3306/abocado
-      username: chain
-      password: chain
+      jdbc-url: jdbc:mysql://192.168.0.165:3306/armtong
+      username: stack
+      password: stack

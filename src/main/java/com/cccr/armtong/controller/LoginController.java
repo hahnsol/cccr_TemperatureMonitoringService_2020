@@ -16,8 +16,9 @@ public class LoginController {
     @Autowired
     private ManagerLoginService managerLoginService;
     
-    @RequestMapping("/indexPage")
+    @RequestMapping("/")
     public String indexPage(){
+        System.out.println("good index");
         return "indexPage";
     }
 

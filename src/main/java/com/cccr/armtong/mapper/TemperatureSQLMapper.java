@@ -9,6 +9,10 @@ import org.apache.ibatis.annotations.*;
 @Mapper
 public interface TemperatureSQLMapper {
     
+    // 오늘 모든 사람의 체온정보 출력
+    @Select("SELECT * FROM TEMPERATURE WHERE TEMPERATURE_DATE=#{temperature_date}")
+    public ArrayList<TemperatureBasicVo> selectAllTodayByTemperatureDate(String temperature_date);
+
     // 해당날짜의 모든 사람의 체온정보 출력
     @Select("SELECT * FROM TEMPERATURE WHERE TEMPERATURE_DATE=#{temperature_date}")
     public ArrayList<TemperatureBasicVo> selectAllByTemperatureDate(TemperatureBasicVo vo);

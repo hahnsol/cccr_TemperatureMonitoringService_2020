@@ -1,10 +1,15 @@
 package com.cccr.armtong.controller;
 
+import java.util.ArrayList;
+import java.util.Calendar;
+
 import javax.servlet.http.HttpSession;
 
+import com.cccr.armtong.service.MainContentService;
 import com.cccr.armtong.service.ManagerLoginService;
 import com.cccr.armtong.vo.ManagerBasicVo;
 import com.cccr.armtong.vo.SessionUserDataVo;
+import com.cccr.armtong.vo.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,7 +20,12 @@ public class LoginController {
 
     @Autowired
     private ManagerLoginService managerLoginService;
-    
+
+    @Autowired
+    private MainContentService MainContentService;
+
+
+
     @RequestMapping("/")
     public String indexPage(){
         System.out.println("good index");
@@ -36,7 +46,7 @@ public class LoginController {
             return "loginFailPage";
         } else {
             session.setAttribute("userSession", userSession);
-            return "redirect:mainContentPage";
+            return "redirect:mainContentStartPage";
         }
 
     }
@@ -46,6 +56,29 @@ public class LoginController {
         session.invalidate();
         return "indexPage";
     }
+    
+    @RequestMapping("/mainContentStartPage")
+    public String mainContentStartPage(){
+
+        ArrayList<MemTemJoinVO> join = new ArrayList<MemTemJoinVO>();
+
+        int year = Calendar.YEAR;
+        int month = Calendar.MONTH;
+        int day = Calendar.DAY_OF_MONTH;
+
+        String year1 = Integer.toString(year);
+        String month1 = Integer.toString(month);
+        String day1 = Integer.toString(day);
+
+        String today = year1+"-"+month1+"-"+day1;
+
+        join = MainContentService.getTodayContents(today);
+        
+
+
+
+    }
+
     
 
 }

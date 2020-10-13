@@ -5,6 +5,8 @@ public class SessionUserDataVo {
     private int manager_idx;
     private String manager_name;
 
+   
+
     public SessionUserDataVo(){}
 
     public SessionUserDataVo(int manager_idx, String manager_name){
@@ -12,19 +14,19 @@ public class SessionUserDataVo {
         this.manager_name = manager_name;
     }
 
-    public int getManagerIdx(){
-        return manager_idx;
+    public int getManager_idx() {
+        return this.manager_idx;
     }
 
-    public void setManagerIdx(int manager_idx){
+    public void setManager_idx(int manager_idx) {
         this.manager_idx = manager_idx;
     }
 
-    public String getManagerName(){
-        return manager_name;
+    public String getManager_name() {
+        return this.manager_name;
     }
 
-    public void setManagerName(String manager_name){
+    public void setManager_name(String manager_name) {
         this.manager_name = manager_name;
     }
 

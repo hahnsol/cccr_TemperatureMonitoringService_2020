@@ -60,7 +60,8 @@
     margin-top: 0;
 }
 
-.loginPage_insert_box button {
+.loginPage_insert_box_button {
+    width: 100%;
     border-radius: 10px;
     padding: 8px;
     font-family: 'Do Hyeon', sans-serif;

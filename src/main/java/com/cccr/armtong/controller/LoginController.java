@@ -16,6 +16,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+
+
 @Controller
 public class LoginController {
 
@@ -26,10 +28,8 @@ public class LoginController {
     private MainContentService mainContentService;
 
 
-
     @RequestMapping("/")
     public String indexPage(){
-        System.out.println("good index");
         return "indexPage";
     }
 
@@ -64,9 +64,11 @@ public class LoginController {
         // 오늘 체온정보 리스트 출력용
         ArrayList<MemTemJoinVO> startContents = new ArrayList<MemTemJoinVO>();
 
-        int year = Calendar.YEAR;
-        int month = Calendar.MONTH;
-        int day = Calendar.DAY_OF_MONTH;
+        Calendar cal = Calendar.getInstance();
+
+        int year = cal.get(Calendar.YEAR);
+        int month = cal.get(Calendar.MONTH)+1;
+        int day = cal.get(Calendar.DAY_OF_MONTH);
 
         String year1 = Integer.toString(year);
         String month1 = Integer.toString(month);
@@ -79,24 +81,28 @@ public class LoginController {
 
         // 오늘 멤버 평균 체온
         Float average = mainContentService.getTodayAverageTem(today);
+        
+        // 소숫점 1자리까지 출력
+        String mainTodayTemAverage = String.format("%.1f", average);
 
+        System.out.println("평균="+mainTodayTemAverage);
 
         // today total member count
         int totalMember = startContents.size();
+        System.out.println("측정인원="+totalMember);
 
         // 오늘 37도 이상인 멤버 숫자
         int memberCount = mainContentService.getTodayCountMemberOf37(today);
+        System.out.println("37도이상인원="+memberCount);
 
-
-
+        System.out.println("startMainPageList.size"+startContents.size());
 
         model.addAttribute("startContents", startContents);
-        model.addAttribute("average", average);
+        model.addAttribute("mainTodayTemAverage", mainTodayTemAverage);
         model.addAttribute("totalMember", totalMember);
         model.addAttribute("memberCount", memberCount);
 
         return "mainContentStartPage";
-        
     }
 
 

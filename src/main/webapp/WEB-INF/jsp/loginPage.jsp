@@ -33,9 +33,7 @@
                         <input type="password" name="manager_pw" class="loginPage_insert_box_input-frame_input2" placeholder="비밀번호">
                     </div>
                 </div>
-                <button type="submit" class="loginPage_insert_box_button">
-                    로그인
-                </button>   
+                <button type="submit" class="loginPage_insert_box_button">로그인</button>   
             </form>
         </div>
     </main>

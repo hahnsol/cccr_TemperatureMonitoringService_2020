@@ -7,6 +7,8 @@ public class ManagerBasicVo {
     private String manager_pw;
     private String manager_name;
 
+  
+
     public ManagerBasicVo(){}
 
     public ManagerBasicVo(int manager_idx, String manager_id, String manager_pw, String manager_name){
@@ -16,38 +18,37 @@ public class ManagerBasicVo {
         this.manager_name = manager_name;
     }
 
-    public int getManagerIdx(){
-        return manager_idx;
+    
+    public int getManager_idx() {
+        return this.manager_idx;
     }
 
-    public void setManagerIdx(int manager_idx){
+    public void setManager_idx(int manager_idx) {
         this.manager_idx = manager_idx;
     }
 
-    public String getManagerId(){
-        return manager_id;
+    public String getManager_id() {
+        return this.manager_id;
     }
 
-    public void setManagerId(String manager_id){
+    public void setManager_id(String manager_id) {
         this.manager_id = manager_id;
     }
 
-    public String getManagerPw(){
-        return manager_pw;
+    public String getManager_pw() {
+        return this.manager_pw;
     }
 
-    public void setManagerPw(String manager_pw){
+    public void setManager_pw(String manager_pw) {
         this.manager_pw = manager_pw;
     }
 
-    public String getManagerName(){
-        return manager_name;
+    public String getManager_name() {
+        return this.manager_name;
     }
 
-    public void setManagerName(String manager_name){
+    public void setManager_name(String manager_name) {
         this.manager_name = manager_name;
     }
-
-
-
+    
 }

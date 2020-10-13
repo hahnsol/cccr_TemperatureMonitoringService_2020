@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.*;
 public interface MemberSQLMapper {
     
     // 특정 멤버의 정보 출력
-    @Select("SELECT * FROM MEMBER WHERE MEMBER_IDX=#{member_idx}")
+    @Select("SELECT * FROM MEMBER WHERE member_idx=#{member_idx}")
     public MemberBasicVo selectMemberInfoByMemberIdx(int member_idx);
 
 }

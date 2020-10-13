@@ -4,6 +4,7 @@ public class MemTemJoinVO {
     private MemberBasicVo memberBasicVo;
     private TemperatureBasicVo temperatureBasicVo;
 
+
     public MemTemJoinVO(){}
 
     public MemTemJoinVO(MemberBasicVo memberBasicVo, TemperatureBasicVo temperatureBasicVo){
@@ -12,19 +13,19 @@ public class MemTemJoinVO {
         this.temperatureBasicVo = temperatureBasicVo;
     }
 
-    public MemberBasicVo getMemberBasicVo(){
-        return memberBasicVo;
+    public MemberBasicVo getMemberBasicVo() {
+        return this.memberBasicVo;
     }
 
-    public void setMemberBasicVo(MemberBasicVo memberBasicVo){
+    public void setMemberBasicVo(MemberBasicVo memberBasicVo) {
         this.memberBasicVo = memberBasicVo;
     }
 
-    public TemperatureBasicVo getTemperatureBasicVo(){
-        return temperatureBasicVo;
+    public TemperatureBasicVo getTemperatureBasicVo() {
+        return this.temperatureBasicVo;
     }
 
-    public void setTemperatrueBasicVO(TemperatureBasicVo temperatureBasicVo){
+    public void setTemperatureBasicVo(TemperatureBasicVo temperatureBasicVo) {
         this.temperatureBasicVo = temperatureBasicVo;
     }
 

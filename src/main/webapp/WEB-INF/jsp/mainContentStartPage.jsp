@@ -43,7 +43,7 @@
                     <i class="fa fa-thermometer-three-quarters" aria-hidden="true"></i>
                 </div>
                 <div class="MainContentPage_section1_bottom_averageTem-temNum">
-                    ${average}
+                    ${mainTodayTemAverage }
                 </div>
             </div>
             <div class="MainContentPage_section1_bottom_right">
@@ -53,7 +53,7 @@
                             측정인원
                         </div>
                         <div class="MainContentPage_section1_bottom_right-countPeople-count">
-                            ${totalMember}
+                            ${totalMember }
                         </div>
                     </div>
                 </div>
@@ -63,7 +63,7 @@
                             37도 이상 인원
                         </div>
                         <div class="MainContentPage_section1_bottom_right-countPeople-count">
-                            ${memberCount}
+                            ${memberCount }
                         </div>
                     </div>
                 </div>
@@ -74,30 +74,30 @@
 
     <section class="MainContentPage_section2">
         <!-- 반복문 시작 -->
-        <c:forEach items="${startContents}" var="todayContents">
-            <div class="MainContentPage_section2_wrapper">
-                <div class="MainContentPage_section1-text">
-                    전체보기
-                </div>
+        <div class="MainContentPage_section2_wrapper">
+            <div class="MainContentPage_section1-text">
+                전체보기
+            </div>
+            <c:forEach items="${startContents }" var="todayContents">
                 <div class="MainContentPage_section1-column">
                     <div class="MainContentPage_section1-column-box1">
                         <div class="MainContentPage_section1-column-text">
-                            ${todayContents.MemberBasicVo.member_name}
+                            ${todayContents.memberBasicVo.member_name}
                         </div>
                     </div>
                     <div class="MainContentPage_section1-column-box2">
                         <div class="MainContentPage_section1-column-text">
-                            ${todayContents.TemperatureBasicVo.temperature_tem}
+                            ${todayContents.temperatureBasicVo.temperature_tem}
                         </div>
                     </div>
                     <div class="MainContentPage_section1-column-box3">
                         <div class="MainContentPage_section1-column-text">
-                            ${todayContents.TemperatureBasicVo.temperature_location}
+                            ${todayContents.temperatureBasicVo.temperature_location}
                         </div>
                     </div>
                 </div>
-            </div>
-        </c:forEach>
+            </c:forEach>
+        </div>
     </section>
 
 </div>

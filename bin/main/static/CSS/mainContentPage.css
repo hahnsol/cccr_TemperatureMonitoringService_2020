@@ -1,13 +1,14 @@
 .mainContentPage_body {
-    background-image: url(../images/mainContentPageBack.jpg);
-    background-repeat: no-repeat;
+    /* background-image: url(../images/mainContentPageBack.jpg);
+    background-repeat: no-repeat; */
+    background-color: #e8dbf0;
 }
 
-.mainContentPage_body_wrapper{
+/* .mainContentPage_body_wrapper{
     width: 100vw;
     height: 100vh;
     background-color: #e8dbf0;
-}
+} */
 
 .mainContentPage_headerBox {
     width: 100%;

@@ -78,17 +78,28 @@ public class MaincontentServiceImpl implements MainContentService {
     @Override
     public Float getTodayAverageTem(String temperature_date){
 
+        System.out.println("today="+temperature_date);
+
         ArrayList<TemperatureBasicVo> temList =  temperatureMapper.selectAllTodayByTemperatureDate(temperature_date);
 
-        float average = 0;
-        int count = 1;
+        System.out.println("list.size="+temList.size());
 
-        for(TemperatureBasicVo tem : temList){
+        Float temperature = 0f;
+        Float average;
+        int count = 0;
+
+        for(TemperatureBasicVo temper : temList){
             
-            average = (average + tem.getTemperature_tem())/count;
-            count ++;
+            System.out.println("temperature_name="+temper.getTemperature_idx());
 
+            count ++;
+            System.out.println("count="+count);
+
+            temperature = temperature + temper.getTemperature_tem();
+           
         }
+
+        average = temperature/count;
 
         return average;
 
@@ -118,15 +129,22 @@ public class MaincontentServiceImpl implements MainContentService {
 
         ArrayList<TemperatureBasicVo> temList =  temperatureMapper.selectAllByTemperatureDate(vo);
 
-        float average = 0;
-        int count = 1;
+        Float temperature = 0f;
+        Float average;
+        int count = 0;
 
-        for(TemperatureBasicVo tem : temList){
+        for(TemperatureBasicVo temper : temList){
             
-            average = (average + tem.getTemperature_tem())/count;
-            count ++;
+            System.out.println("temperature_name="+temper.getTemperature_idx());
 
+            count ++;
+            System.out.println("count="+count);
+
+            temperature = temperature + temper.getTemperature_tem();
+           
         }
+
+        average = temperature/count;
 
         return average;
     }

@@ -73,9 +73,81 @@ public class MaincontentServiceImpl implements MainContentService {
 
         return mainContentList;
 
+    }
+
+    @Override
+    public Float getTodayAverageTem(String temperature_date){
+
+        ArrayList<TemperatureBasicVo> temList =  temperatureMapper.selectAllTodayByTemperatureDate(temperature_date);
+
+        float average = 0;
+        int count = 1;
+
+        for(TemperatureBasicVo tem : temList){
+            
+            average = (average + tem.getTemperature_tem())/count;
+            count ++;
+
+        }
+
+        return average;
 
     }
 
+
+    @Override
+    public int getTodayCountMemberOf37(String temperature_date){
+
+        ArrayList<TemperatureBasicVo> temList =  temperatureMapper.selectAllTodayByTemperatureDate(temperature_date);
+
+        int count = 0;
+
+        for(TemperatureBasicVo tem : temList){
+            
+            if(tem.getTemperature_tem() >= 37 ){
+                count ++;
+            }
+        }
+
+        return count;
+    }
+
+
+    @Override
+    public Float getSelectDayAverageTem(TemperatureBasicVo vo){
+
+        ArrayList<TemperatureBasicVo> temList =  temperatureMapper.selectAllByTemperatureDate(vo);
+
+        float average = 0;
+        int count = 1;
+
+        for(TemperatureBasicVo tem : temList){
+            
+            average = (average + tem.getTemperature_tem())/count;
+            count ++;
+
+        }
+
+        return average;
+    }
+
+
+    @Override
+    public int getSelectDayCountMemberOf37(TemperatureBasicVo vo){
+
+        ArrayList<TemperatureBasicVo> temList =  temperatureMapper.selectAllByTemperatureDate(vo);
+
+        int count = 0;
+
+        for(TemperatureBasicVo tem : temList){
+            
+            if(tem.getTemperature_tem() >= 37 ){
+                count ++;
+            }
+        }
+
+        return count;
+    }
 
 
 

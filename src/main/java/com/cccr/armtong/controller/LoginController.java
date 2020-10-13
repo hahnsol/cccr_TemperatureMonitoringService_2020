@@ -13,6 +13,7 @@ import com.cccr.armtong.vo.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -22,7 +23,7 @@ public class LoginController {
     private ManagerLoginService managerLoginService;
 
     @Autowired
-    private MainContentService MainContentService;
+    private MainContentService mainContentService;
 
 
 
@@ -46,7 +47,7 @@ public class LoginController {
             return "loginFailPage";
         } else {
             session.setAttribute("userSession", userSession);
-            return "redirect:mainContentStartPage";
+            return "mainContentStartPage";
         }
 
     }
@@ -58,9 +59,10 @@ public class LoginController {
     }
     
     @RequestMapping("/mainContentStartPage")
-    public String mainContentStartPage(){
+    public String mainContentStartPage(Model model){
 
-        ArrayList<MemTemJoinVO> join = new ArrayList<MemTemJoinVO>();
+        // 오늘 체온정보 리스트 출력용
+        ArrayList<MemTemJoinVO> startContents = new ArrayList<MemTemJoinVO>();
 
         int year = Calendar.YEAR;
         int month = Calendar.MONTH;
@@ -72,10 +74,56 @@ public class LoginController {
 
         String today = year1+"-"+month1+"-"+day1;
 
-        join = MainContentService.getTodayContents(today);
+        startContents = mainContentService.getTodayContents(today);
+
+
+        // 오늘 멤버 평균 체온
+        Float average = mainContentService.getTodayAverageTem(today);
+
+
+        // today total member count
+        int totalMember = startContents.size();
+
+        // 오늘 37도 이상인 멤버 숫자
+        int memberCount = mainContentService.getTodayCountMemberOf37(today);
+
+
+
+
+        model.addAttribute("startContents", startContents);
+        model.addAttribute("average", average);
+        model.addAttribute("totalMember", totalMember);
+        model.addAttribute("memberCount", memberCount);
+
+        return "mainContentStartPage";
         
+    }
 
 
+    @RequestMapping("/mainContentPage")
+    public String mainContentStartPage(TemperatureBasicVo param, Model model){
+
+        // selected day 체온정보 리스트 출력용
+        ArrayList<MemTemJoinVO> mainContentList = new ArrayList<MemTemJoinVO>();
+
+        mainContentList = mainContentService.getSelectDayContents(param);
+
+        
+        // selected day 멤버 평균 체온
+        Float maincontenttemAverage = mainContentService.getSelectDayAverageTem(param);
+
+        // selected day total member count
+        int mainContentTotalMember = mainContentList.size();
+
+        // selcted day 37도 이상인 멤버 숫자
+        int mainContentMemberOf37 = mainContentService.getSelectDayCountMemberOf37(param);
+
+        model.addAttribute("mainContentList", mainContentList);
+        model.addAttribute("maincontenttemAverage", maincontenttemAverage);
+        model.addAttribute("mainContentTotalMember", mainContentTotalMember);
+        model.addAttribute("mainContentMemberOf37", mainContentMemberOf37);
+
+        return "mainContentPage";
 
     }
 

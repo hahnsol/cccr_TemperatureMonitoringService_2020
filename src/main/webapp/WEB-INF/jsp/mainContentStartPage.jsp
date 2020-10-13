@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/49199b18c4.js" crossorigin="anonymous"></script>
-    <title>mainContentPage</title>
+    <title>MainContentStartPage</title>
     <link rel="stylesheet" href="resources/CSS/style.css">
     <link rel="stylesheet" href="resources/CSS/global.css">
     <link rel="stylesheet" href="resources/CSS/mainContentPage.css">
@@ -43,7 +43,7 @@
                     <i class="fa fa-thermometer-three-quarters" aria-hidden="true"></i>
                 </div>
                 <div class="MainContentPage_section1_bottom_averageTem-temNum">
-                    ${maincontenttemAverage}
+                    ${average}
                 </div>
             </div>
             <div class="MainContentPage_section1_bottom_right">
@@ -53,7 +53,7 @@
                             측정인원
                         </div>
                         <div class="MainContentPage_section1_bottom_right-countPeople-count">
-                            ${mainContentTotalMember}
+                            ${totalMember}
                         </div>
                     </div>
                 </div>
@@ -63,7 +63,7 @@
                             37도 이상 인원
                         </div>
                         <div class="MainContentPage_section1_bottom_right-countPeople-count">
-                            ${mainContentMemberOf37}
+                            ${memberCount}
                         </div>
                     </div>
                 </div>
@@ -74,7 +74,7 @@
 
     <section class="MainContentPage_section2">
         <!-- 반복문 시작 -->
-        <c:forEach items="${mainContentList}" var="selectedDayContents">
+        <c:forEach items="${startContents}" var="todayContents">
             <div class="MainContentPage_section2_wrapper">
                 <div class="MainContentPage_section1-text">
                     전체보기
@@ -82,17 +82,17 @@
                 <div class="MainContentPage_section1-column">
                     <div class="MainContentPage_section1-column-box1">
                         <div class="MainContentPage_section1-column-text">
-                            ${selectedDayContents.MemberBasicVo.member_name}
+                            ${todayContents.MemberBasicVo.member_name}
                         </div>
                     </div>
                     <div class="MainContentPage_section1-column-box2">
                         <div class="MainContentPage_section1-column-text">
-                            ${selectedDayContents.TemperatureBasicVo.temperature_tem}
+                            ${todayContents.TemperatureBasicVo.temperature_tem}
                         </div>
                     </div>
                     <div class="MainContentPage_section1-column-box3">
                         <div class="MainContentPage_section1-column-text">
-                            ${selectedDayContents.TemperatureBasicVo.temperature_location}
+                            ${todayContents.TemperatureBasicVo.temperature_location}
                         </div>
                     </div>
                 </div>

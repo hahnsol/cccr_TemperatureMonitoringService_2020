@@ -104,28 +104,61 @@
             </div>
             <!-- 반복문 시작 -->
             <c:forEach items="${mainContentList}" var="selectedDayContents">
-                <div class="MainContentPage_section1-column">
-                    <div class="MainContentPage_section1-column-box1">
-                        <div class="MainContentPage_section1-column-text">
-                            ${selectedDayContents.memberBasicVo.member_name}
-                        </div>
-                    </div>
-                    <div class="MainContentPage_section1-column-box2">
-                        <div class="MainContentPage_section1-column-text">
-                            ${selectedDayContents.temperatureBasicVo.temperature_tem}
-                        </div>
-                    </div>
-                    <div class="MainContentPage_section1-column-box3">
-                        <div class="MainContentPage_section1-column-text">
-                            ${selectedDayContents.temperatureBasicVo.temperature_location}
-                        </div>
-                    </div>
-                    <div class="MainContentPage_section1-column-box4">
-                        <div class="MainContentPage_section1-column-text">
-                            ${selectedDayContents.temperatureBasicVo.temperature_time}
-                        </div>
-                    </div>
-                </div>
+                
+                <c:choose>
+
+                    <!--if check-->
+                    <c:when test="${selectedDayContents.temperatureBasicVo.temperature_tem < 37}">
+                        <a href="/memberInfoPage?selectedDayContents.memberBasicVo.member_idx" class="MainContentPage_section1-column">
+                            <div class="MainContentPage_section1-column-box1">
+                                <div class="MainContentPage_section1-column-text">
+                                    ${selectedDayContents.memberBasicVo.member_name}
+                                </div>
+                            </div>
+                            <div class="MainContentPage_section1-column-box2">
+                                <div class="MainContentPage_section1-column-text">
+                                    ${selectedDayContents.temperatureBasicVo.temperature_tem}
+                                </div>
+                            </div>
+                            <div class="MainContentPage_section1-column-box3">
+                                <div class="MainContentPage_section1-column-text">
+                                    ${selectedDayContents.temperatureBasicVo.temperature_location}
+                                </div>
+                            </div>
+                            <div class="MainContentPage_section1-column-box4">
+                                <div class="MainContentPage_section1-column-text">
+                                    ${selectedDayContents.temperatureBasicVo.temperature_time}
+                                </div>
+                            </div>
+                        </a>
+                    </c:when>
+                    
+                    <!-- else -->
+                    <c:otherwise>
+                        <a href="/memberInfoPage?selectedDayContents.memberBasicVo.member_idx" class="MainContentPage_section1-column MainContentPage_section1-column_red">
+                            <div class="MainContentPage_section1-column-box1">
+                                <div class="MainContentPage_section1-column-text">
+                                    ${selectedDayContents.memberBasicVo.member_name}
+                                </div>
+                            </div>
+                            <div class="MainContentPage_section1-column-box2">
+                                <div class="MainContentPage_section1-column-text">
+                                    ${selectedDayContents.temperatureBasicVo.temperature_tem}
+                                </div>
+                            </div>
+                            <div class="MainContentPage_section1-column-box3">
+                                <div class="MainContentPage_section1-column-text">
+                                    ${selectedDayContents.temperatureBasicVo.temperature_location}
+                                </div>
+                            </div>
+                            <div class="MainContentPage_section1-column-box4">
+                                <div class="MainContentPage_section1-column-text">
+                                    ${selectedDayContents.temperatureBasicVo.temperature_time}
+                                </div>
+                            </div>
+                        </a>
+                    </c:otherwise>
+                </c:choose>
             </c:forEach>
         </div>  
     </section>

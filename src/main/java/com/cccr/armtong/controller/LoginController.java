@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 
 import com.cccr.armtong.service.MainContentService;
 import com.cccr.armtong.service.ManagerLoginService;
+import com.cccr.armtong.service.MemberContentService;
 import com.cccr.armtong.vo.ManagerBasicVo;
 import com.cccr.armtong.vo.SessionUserDataVo;
 import com.cccr.armtong.vo.*;
@@ -26,6 +27,9 @@ public class LoginController {
 
     @Autowired
     private MainContentService mainContentService;
+
+    @Autowired
+    private MemberContentService memberContentService;
 
 
     @RequestMapping("/")
@@ -140,6 +144,20 @@ public class LoginController {
         model.addAttribute("mainContentMemberOf37", mainContentMemberOf37);
 
         return "mainContentPage";
+
+    }
+
+    @RequestMapping("/memberInfoPage")
+    public String memberInfoPage(MemberBasicVo param, Model model){
+
+        MemberBasicVo memberInfo = memberContentService.getMemberInfoByVo(param);
+
+        ArrayList<TemperatureBasicVo> temperatureList = memberContentService.getMemberTemContents(param);
+
+        model.addAttribute("memberInfo", memberInfo);
+        model.addAttribute("temperatureList", temperatureList);
+
+        return "memberInfoPage";
 
     }
 

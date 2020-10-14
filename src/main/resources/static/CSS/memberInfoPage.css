@@ -1,0 +1,157 @@
+.memberInfoPage_body {
+    background-color: #e8dbf0;
+}
+
+.memberInfoPage_section1 {
+    background-color: rgb(42, 8, 70);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    padding: 60px 10px;
+    margin-bottom: 80px;
+}
+
+.memberInfoPage_section1_memberinfo {
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.memberInfoPage_section1_memberinfo_left{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 40px;
+}
+
+.memberInfoPage_section1_memberinfo_left img {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 300px;
+    height:300px;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.memberInfoPage_section1_memberinfo_right{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+    margin-left: 40px;
+}
+
+.memberInfoPage_section1_memberinfo_right-textBox{
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center
+}
+
+.memberInfoPage_section1_memberinfo_right-textBox:not(:last-child){
+    margin-bottom: 40px;
+}
+
+.memberInfoPage_section1_memberinfo_right-textBox_title {
+    font-size: 18px;
+    font-family: 'Do Hyeon', sans-serif;
+    color: rgba(250, 250, 250, 0.6);
+}
+
+.memberInfoPage_section1_memberinfo_right-textBox_text {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-size: 30px;
+    font-family: 'Do Hyeon', sans-serif;
+    color: white;
+}
+
+.memberInfoPage_section1_memberinfo_right-textBox_title1{
+    margin-right: 40px;
+}
+
+.memberInfoPage_section1_memberinfo_right-textBox_title3{
+    margin-right: 10px;
+}
+
+.memberInfoPage_section2 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.memberInfoPage_section2_wrapper{
+    width: 70%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 50px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.memberInfoPage_section2_top {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    font-family: 'Secular One', sans-serif;
+    font-weight: bolder;
+    margin-bottom: 50px;
+}
+
+.memberInfoPage_section2_middle {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.memberInfoPage_section2_middle_Box1 {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Do Hyeon', sans-serif;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 20px o;
+}
+
+.memberInfoPage_section2_middle_Box1:not(:last-child) {
+    border-right: 2px solid white;
+}
+
+.memberInfoPage_section2_bottom {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid rgb(97, 94, 94);
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.memberInfoPage_section2_bottom_Box1 {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Do Hyeon', sans-serif;
+}
+
+.memberInfoPage_section2_bottom_Box1:not(:last-child) {
+    border-right: 2px solid rgb(97, 94, 94);
+}

@@ -29,11 +29,14 @@
     <section class="MainContentPage_section1">
       <div class="MainContentPage_section1_wrapper">
         <form action="/mainContentPage" method="POST" enctype="multipart/form-data" class="MainContentPage_section1_top-selectDate"> 
-            <input type="date" value="TODAY" name="temperature_date" >
+            <input type="date" name="temperature_date" >
             <button type="submit" >
                 조회하기
             </button>
         </form>
+        <div class="MainContentPage_section1_middle">
+            ${selectedDay}
+        </div>
         <div class="MainContentPage_section1_bottom">
             <div class="MainContentPage_section1_bottom_averageTem">
                 <div class="MainContentPage_section1_bottom_averageTem-text">
@@ -43,7 +46,7 @@
                     <i class="fa fa-thermometer-three-quarters" aria-hidden="true"></i>
                 </div>
                 <div class="MainContentPage_section1_bottom_averageTem-temNum">
-                    ${maincontenttemAverage}
+                    ${mainSelectedDayTemAverage}
                 </div>
             </div>
             <div class="MainContentPage_section1_bottom_right">
@@ -73,31 +76,58 @@
     </section>
 
     <section class="MainContentPage_section2">
-        <!-- 반복문 시작 -->
-        <c:forEach items="${mainContentList}" var="selectedDayContents">
-            <div class="MainContentPage_section2_wrapper">
-                <div class="MainContentPage_section1-text">
-                    전체보기
+        <div class="MainContentPage_section2_wrapper">
+            <div class="MainContentPage_section1-text">
+                전체보기
+            </div>
+            <div class="MainContentPage_section2-title">
+                <div class="MainContentPage_section2-title-box1">
+                    <div class="MainContentPage_section1-column-text">
+                        name
+                    </div>
                 </div>
+                <div class="MainContentPage_section2-title-box2">
+                    <div class="MainContentPage_section1-column-text">
+                        temperature
+                    </div>
+                </div>
+                <div class="MainContentPage_section2-title-box3">
+                    <div class="MainContentPage_section1-column-text">
+                        location
+                    </div>
+                </div>
+                <div class="MainContentPage_section2-title-box4">
+                    <div class="MainContentPage_section1-column-text">
+                        time
+                    </div>
+                </div>
+            </div>
+            <!-- 반복문 시작 -->
+            <c:forEach items="${mainContentList}" var="selectedDayContents">
                 <div class="MainContentPage_section1-column">
                     <div class="MainContentPage_section1-column-box1">
                         <div class="MainContentPage_section1-column-text">
-                            ${selectedDayContents.MemberBasicVo.member_name}
+                            ${selectedDayContents.memberBasicVo.member_name}
                         </div>
                     </div>
                     <div class="MainContentPage_section1-column-box2">
                         <div class="MainContentPage_section1-column-text">
-                            ${selectedDayContents.TemperatureBasicVo.temperature_tem}
+                            ${selectedDayContents.temperatureBasicVo.temperature_tem}
                         </div>
                     </div>
                     <div class="MainContentPage_section1-column-box3">
                         <div class="MainContentPage_section1-column-text">
-                            ${selectedDayContents.TemperatureBasicVo.temperature_location}
+                            ${selectedDayContents.temperatureBasicVo.temperature_location}
+                        </div>
+                    </div>
+                    <div class="MainContentPage_section1-column-box4">
+                        <div class="MainContentPage_section1-column-text">
+                            ${selectedDayContents.temperatureBasicVo.temperature_time}
                         </div>
                     </div>
                 </div>
-            </div>
-        </c:forEach>
+            </c:forEach>
+        </div>  
     </section>
 
 </div>

@@ -6,17 +6,20 @@ public class TemperatureBasicVo {
     private int member_idx;
     private Float temperature_tem;
     private String temperature_date;
-    private String temperature_location;
+	private String temperature_location;
+	private String temperature_time;
+
 
     public TemperatureBasicVo() {}
 
-    public TemperatureBasicVo(int temperature_idx, int member_idx, Float temperature_tem, String temperature_date, String temperature_location){
+    public TemperatureBasicVo(int temperature_idx, int member_idx, Float temperature_tem, String temperature_date, String temperature_location, String temperature_time){
         super();
         this.temperature_idx = temperature_idx;
         this.member_idx = member_idx;
         this.temperature_tem = temperature_tem;
         this.temperature_date = temperature_date;
-        this.temperature_location = temperature_location;
+		this.temperature_location = temperature_location;
+		this.temperature_time = temperature_time;
     }
 
     public int getTemperature_idx() {
@@ -59,5 +62,12 @@ public class TemperatureBasicVo {
 		this.temperature_location = temperature_location;
 	}
 
+	public String getTemperature_time() {
+		return this.temperature_time;
+	}
+
+	public void setTemperature_time(String temperature_time) {
+		this.temperature_time = temperature_time;
+	}
 
 }

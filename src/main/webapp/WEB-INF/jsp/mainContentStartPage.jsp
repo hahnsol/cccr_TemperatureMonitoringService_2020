@@ -28,12 +28,15 @@
 
     <section class="MainContentPage_section1">
       <div class="MainContentPage_section1_wrapper">
-        <form action="/mainContentPage" method="POST" enctype="multipart/form-data" class="MainContentPage_section1_top-selectDate"> 
-            <input type="date" value="TODAY" name="temperature_date" >
+        <form action="/mainContentPage" method="GET" enctype="multipart/form-data" class="MainContentPage_section1_top-selectDate"> 
+            <input type="date" name="temperature_date">
             <button type="submit" >
                 조회하기
             </button>
         </form>
+        <div class="MainContentPage_section1_middle">
+            TODAY
+        </div>
         <div class="MainContentPage_section1_bottom">
             <div class="MainContentPage_section1_bottom_averageTem">
                 <div class="MainContentPage_section1_bottom_averageTem-text">
@@ -73,11 +76,33 @@
     </section>
 
     <section class="MainContentPage_section2">
-        <!-- 반복문 시작 -->
         <div class="MainContentPage_section2_wrapper">
             <div class="MainContentPage_section1-text">
                 전체보기
             </div>
+            <div class="MainContentPage_section2-title">
+                <div class="MainContentPage_section2-title-box1">
+                    <div class="MainContentPage_section1-column-text">
+                        name
+                    </div>
+                </div>
+                <div class="MainContentPage_section2-title-box2">
+                    <div class="MainContentPage_section1-column-text">
+                        temperature
+                    </div>
+                </div>
+                <div class="MainContentPage_section2-title-box3">
+                    <div class="MainContentPage_section1-column-text">
+                        location
+                    </div>
+                </div>
+                <div class="MainContentPage_section2-title-box4">
+                    <div class="MainContentPage_section1-column-text">
+                        time
+                    </div>
+                </div>
+            </div>
+            <!-- 반복문 시작 -->
             <c:forEach items="${startContents }" var="todayContents">
                 <div class="MainContentPage_section1-column">
                     <div class="MainContentPage_section1-column-box1">
@@ -93,6 +118,11 @@
                     <div class="MainContentPage_section1-column-box3">
                         <div class="MainContentPage_section1-column-text">
                             ${todayContents.temperatureBasicVo.temperature_location}
+                        </div>
+                    </div>
+                    <div class="MainContentPage_section1-column-box4">
+                        <div class="MainContentPage_section1-column-text">
+                            ${todayContents.temperatureBasicVo.temperature_time}
                         </div>
                     </div>
                 </div>

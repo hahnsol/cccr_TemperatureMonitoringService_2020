@@ -83,7 +83,9 @@ public class LoginController {
         Float average = mainContentService.getTodayAverageTem(today);
         
         // 소숫점 1자리까지 출력
-        String mainTodayTemAverage = String.format("%.1f", average);
+        String mainTodayTemAverageString = String.format("%.1f", average);
+        // change double type
+        Double mainTodayTemAverage = Double.parseDouble(mainTodayTemAverageString);
 
         System.out.println("평균="+mainTodayTemAverage);
 
@@ -109,6 +111,8 @@ public class LoginController {
     @RequestMapping("/mainContentPage")
     public String mainContentStartPage(TemperatureBasicVo param, Model model){
 
+        String selectedDay = param.getTemperature_date();
+
         // selected day 체온정보 리스트 출력용
         ArrayList<MemTemJoinVO> mainContentList = new ArrayList<MemTemJoinVO>();
 
@@ -116,7 +120,12 @@ public class LoginController {
 
         
         // selected day 멤버 평균 체온
-        Float maincontenttemAverage = mainContentService.getSelectDayAverageTem(param);
+        Float selectedDayAverage = mainContentService.getSelectDayAverageTem(param);
+
+        // 소숫점 1자리까지 출력
+        String mainSelectedDayTemAverageString = String.format("%.1f", selectedDayAverage);
+        // 다시 숫자로 변환
+        double mainSelectedDayTemAverage = Double.parseDouble(mainSelectedDayTemAverageString);
 
         // selected day total member count
         int mainContentTotalMember = mainContentList.size();
@@ -124,14 +133,17 @@ public class LoginController {
         // selcted day 37도 이상인 멤버 숫자
         int mainContentMemberOf37 = mainContentService.getSelectDayCountMemberOf37(param);
 
+        model.addAttribute("selectedDay", selectedDay);
         model.addAttribute("mainContentList", mainContentList);
-        model.addAttribute("maincontenttemAverage", maincontenttemAverage);
+        model.addAttribute("mainSelectedDayTemAverage", mainSelectedDayTemAverage);
         model.addAttribute("mainContentTotalMember", mainContentTotalMember);
         model.addAttribute("mainContentMemberOf37", mainContentMemberOf37);
 
         return "mainContentPage";
 
     }
+
+
 
     
 

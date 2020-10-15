@@ -23,6 +23,6 @@ spring:
   datasource:
     hikari:
       driverClassName: com.mysql.cj.jdbc.Driver
-      jdbc-url: jdbc:mysql://192.168.0.165:3306/armtong
+      jdbc-url: jdbc:mysql://192.168.0.136:3306/armtong_proj
       username: stack
       password: stack

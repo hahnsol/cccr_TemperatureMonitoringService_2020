@@ -13,7 +13,7 @@
 </head>
 <body class="mainContentPage_body">
 
-<div class="mainContentPage_body_wrapper">
+
 
     <header class="mainContentPage_headerBox">
         <div class="mainContentPage_headerBox_header">
@@ -102,13 +102,11 @@
                     </div>
                 </div>
             </div>
-            <!-- 반복문 시작 -->
-            <c:forEach items="${startContents }" var="todayContents">
 
-                <!-- if check -->
+            <c:forEach items="${startContents}" var="todayContents">
                 <c:choose>
                     <c:when test="${todayContents.temperatureBasicVo.temperature_tem < 37}">
-                        <a href="/memberInfoPage?member_idx=${todayContents.memberBasicVo.member_idx}" class="MainContentPage_section1-column">
+                        <a href="/memberInfoPage?member_idx=${todayContents.memberBasicVo.member_idx}" target="_blank" class="MainContentPage_section1-column">
                             <div class="MainContentPage_section1-column-box1">
                                 <div class="MainContentPage_section1-column-text">
                                     ${todayContents.memberBasicVo.member_name}
@@ -132,9 +130,9 @@
                         </a>
                     </c:when>
 
-                    <!-- else -->
+                    
                     <c:otherwise>
-                        <a href="/memberInfoPage?member_idx=${todayContents.memberBasicVo.member_idx}" class="MainContentPage_section1-column MainContentPage_section1-column_red">
+                        <a href="/memberInfoPage?member_idx=${todayContents.memberBasicVo.member_idx}" target="_blank" class="MainContentPage_section1-column MainContentPage_section1-column_red">
                             <div class="MainContentPage_section1-column-box1">
                                 <div class="MainContentPage_section1-column-text">
                                     ${todayContents.memberBasicVo.member_name}
@@ -158,7 +156,7 @@
                         </a>
                     </c:otherwise>
                 </c:choose>
-            </c:forEach>
+            </c:forEach> 
         </div>
     </section>
 

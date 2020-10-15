@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head></head>
@@ -14,18 +16,20 @@
     <section class="memberInfoPage_section1">
         <div class="memberInfoPage_section1_memberinfo">
             <div class="memberInfoPage_section1_memberinfo_left">
-                <c:if test="${memberInfo.member_idx == 1}">
-                    <img src="https://user-images.githubusercontent.com/46100398/95995210-28e0a580-0e6c-11eb-87e9-1da4ffcd5950.jpg" alt="sol's img">
-                </c:if>
-                <c:if test="${memberInfo.member_idx == 2}">
-                    <img src="https://user-images.githubusercontent.com/46100398/95995217-2aaa6900-0e6c-11eb-8e00-cf90330ae34c.jpg" alt="won's img">
-                </c:if>
-                <c:if test="${memberInfo.member_idx == 3}">
-                    <img src="https://user-images.githubusercontent.com/46100398/95995231-2e3df000-0e6c-11eb-945e-3aa2dd9020ec.jpg" alt="hyun's img">
-                </c:if>
-                <c:if test="${memberInfo.member_idx == 4 || memberInfo.member_idx == 5 || memberInfo.member_idx == 6 || memberInfo.member_idx == 7}">
-                    <img src="https://user-images.githubusercontent.com/46100398/96003691-76154500-0e75-11eb-9492-299e6179a636.jpg" alt="someone's img">
-                </c:if>
+                <c:choose>
+                    <c:when test="${memberInfo.member_idx == 1}">
+                        <img src="https://user-images.githubusercontent.com/46100398/95995210-28e0a580-0e6c-11eb-87e9-1da4ffcd5950.jpg" alt="sol's img">
+                    </c:when>
+                    <c:when test="${memberInfo.member_idx == 2}">
+                        <img src="https://user-images.githubusercontent.com/46100398/95995217-2aaa6900-0e6c-11eb-8e00-cf90330ae34c.jpg" alt="won's img">
+                    </c:when>
+                    <c:when test="${memberInfo.member_idx == 3}">
+                        <img src="https://user-images.githubusercontent.com/46100398/95995231-2e3df000-0e6c-11eb-945e-3aa2dd9020ec.jpg" alt="hyun's img">
+                    </c:when>
+                    <c:otherwise>
+                        <img src="https://user-images.githubusercontent.com/46100398/96003691-76154500-0e75-11eb-9492-299e6179a636.jpg" alt="someone's img">
+                    </c:otherwise>
+                </c:choose>
             </div>
             <div class="memberInfoPage_section1_memberinfo_right">
                 <div class="memberInfoPage_section1_memberinfo_right-textBox">
@@ -67,7 +71,7 @@
     <section class="memberInfoPage_section2">
         <div class="memberInfoPage_section2_wrapper">
             <div class="memberInfoPage_section2_top">
-                해당 인물 전체 체온측정 데이터
+                해당 인물 전체 체온 데이터 List
             </div>
             <div class="memberInfoPage_section2_middle">
                 <div class="memberInfoPage_section2_middle_Box1">
@@ -84,7 +88,7 @@
                 </div>
             </div>
             <!--반복문 시작-->
-            <c:forEach items="${temperatureList }" var="temList">
+            <c:forEach items="${temperatureList}" var="temList">
                 <div class="memberInfoPage_section2_bottom">
                     <div class="memberInfoPage_section2_bottom_Box1">
                         ${temList.temperature_date}

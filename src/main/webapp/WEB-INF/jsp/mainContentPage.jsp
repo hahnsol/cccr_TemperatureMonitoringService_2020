@@ -106,10 +106,8 @@
             <c:forEach items="${mainContentList}" var="selectedDayContents">
                 
                 <c:choose>
-
-                    <!--if check-->
                     <c:when test="${selectedDayContents.temperatureBasicVo.temperature_tem < 37}">
-                        <a href="/memberInfoPage?selectedDayContents.memberBasicVo.member_idx" class="MainContentPage_section1-column">
+                        <a href="/memberInfoPage?selectedDayContents.memberBasicVo.member_idx" target="_blank" class="MainContentPage_section1-column">
                             <div class="MainContentPage_section1-column-box1">
                                 <div class="MainContentPage_section1-column-text">
                                     ${selectedDayContents.memberBasicVo.member_name}
@@ -133,9 +131,8 @@
                         </a>
                     </c:when>
                     
-                    <!-- else -->
                     <c:otherwise>
-                        <a href="/memberInfoPage?selectedDayContents.memberBasicVo.member_idx" class="MainContentPage_section1-column MainContentPage_section1-column_red">
+                        <a href="/memberInfoPage?selectedDayContents.memberBasicVo.member_idx" target="_blank" class="MainContentPage_section1-column MainContentPage_section1-column_red">
                             <div class="MainContentPage_section1-column-box1">
                                 <div class="MainContentPage_section1-column-text">
                                     ${selectedDayContents.memberBasicVo.member_name}

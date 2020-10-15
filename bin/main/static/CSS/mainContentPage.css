@@ -269,10 +269,11 @@
     border-radius: 10px;
     padding: 10px;
     margin-bottom: 20px;
+    color: black;
 }
 
 .MainContentPage_section1-column_red {
-    background-color: rgba(184, 51, 51, 0.2);
+    background-color: rgba(185, 21, 21, 0.5);
 }
 
 .MainContentPage_section1-column-box1 {

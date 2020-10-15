@@ -37,32 +37,31 @@ public class LoginController {
         return "indexPage";
     }
 
-    @RequestMapping("/loginPage")
+    @RequestMapping("loginPage")
     public String loginPage(){
         return "loginPage";
     }
 
-    @RequestMapping("/loginAction")
+    @RequestMapping("loginAction")
     public String loginAction(ManagerBasicVo param, HttpSession session){
 
         SessionUserDataVo userSession = managerLoginService.login(param);
 
         if(userSession == null){
             return "loginFailPage";
-        } else {
+        } 
             session.setAttribute("userSession", userSession);
-            return "mainContentStartPage";
-        }
 
+            return "redirect:mainContentStartPage";
     }
 
-    @RequestMapping("/logoutAction")
+    @RequestMapping("logoutAction")
     public String logoutAction(HttpSession session){
         session.invalidate();
         return "indexPage";
     }
     
-    @RequestMapping("/mainContentStartPage")
+    @RequestMapping("mainContentStartPage")
     public String mainContentStartPage(Model model){
 
         // 오늘 체온정보 리스트 출력용
@@ -112,7 +111,7 @@ public class LoginController {
     }
 
 
-    @RequestMapping("/mainContentPage")
+    @RequestMapping("mainContentPage")
     public String mainContentStartPage(TemperatureBasicVo param, Model model){
 
         String selectedDay = param.getTemperature_date();
@@ -147,7 +146,7 @@ public class LoginController {
 
     }
 
-    @RequestMapping("/memberInfoPage")
+    @RequestMapping("memberInfoPage")
     public String memberInfoPage(MemberBasicVo param, Model model){
 
         MemberBasicVo memberInfo = memberContentService.getMemberInfoByVo(param);

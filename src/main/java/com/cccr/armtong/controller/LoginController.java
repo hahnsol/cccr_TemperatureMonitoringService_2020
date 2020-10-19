@@ -33,6 +33,11 @@ public class LoginController {
 
 
     @RequestMapping("/")
+    public String startPage(){
+        return "indexPage";
+    }
+
+    @RequestMapping("/indexPage")
     public String indexPage(){
         return "indexPage";
     }

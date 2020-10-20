@@ -107,7 +107,7 @@
                 
                 <c:choose>
                     <c:when test="${selectedDayContents.temperatureBasicVo.temperature_tem < 37}">
-                        <a href="/memberInfoPage?selectedDayContents.memberBasicVo.member_idx" target="_blank" class="MainContentPage_section1-column">
+                        <a href="/memberInfoPage?member_idx=${selectedDayContents.memberBasicVo.member_idx}" target="_blank" class="MainContentPage_section1-column">
                             <div class="MainContentPage_section1-column-box1">
                                 <div class="MainContentPage_section1-column-text">
                                     ${selectedDayContents.memberBasicVo.member_name}
@@ -132,7 +132,7 @@
                     </c:when>
                     
                     <c:otherwise>
-                        <a href="/memberInfoPage?selectedDayContents.memberBasicVo.member_idx" target="_blank" class="MainContentPage_section1-column MainContentPage_section1-column_red">
+                        <a href="/memberInfoPage?member_idx=${selectedDayContents.memberBasicVo.member_idx}" target="_blank" class="MainContentPage_section1-column MainContentPage_section1-column_red">
                             <div class="MainContentPage_section1-column-box1">
                                 <div class="MainContentPage_section1-column-text">
                                     ${selectedDayContents.memberBasicVo.member_name}

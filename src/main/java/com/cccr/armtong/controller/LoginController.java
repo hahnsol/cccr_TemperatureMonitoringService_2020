@@ -37,7 +37,7 @@ public class LoginController {
         return "indexPage";
     }
 
-    @RequestMapping("/indexPage")
+    @RequestMapping("indexPage")
     public String indexPage(){
         return "indexPage";
     }
@@ -98,7 +98,7 @@ public class LoginController {
         System.out.println("평균="+mainTodayTemAverage);
 
         // today total member count
-        int totalMember = startContents.size();
+        int totalMember = mainContentService.getTodayMemNum(today);
         System.out.println("측정인원="+totalMember);
 
         // 오늘 37도 이상인 멤버 숫자
@@ -136,7 +136,7 @@ public class LoginController {
         double mainSelectedDayTemAverage = Double.parseDouble(mainSelectedDayTemAverageString);
 
         // selected day total member count
-        int mainContentTotalMember = mainContentList.size();
+        int mainContentTotalMember = mainContentService.getSelectDayMemNum(param);
 
         // selcted day 37도 이상인 멤버 숫자
         int mainContentMemberOf37 = mainContentService.getSelectDayCountMemberOf37(param);

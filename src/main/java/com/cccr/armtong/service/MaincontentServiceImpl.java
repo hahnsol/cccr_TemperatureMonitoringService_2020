@@ -105,20 +105,49 @@ public class MaincontentServiceImpl implements MainContentService {
 
     }
 
+    @Override
+    public int getTodayMemNum(String temperature_date) {
+        
+        ArrayList<TemperatureBasicVo> todayTemList = temperatureMapper.selectAllTodayByTemperatureDate(temperature_date);
+
+        int count;
+
+        for(int i=0; i<todayTemList.size(); i++){
+            for(int k=i+1; k<todayTemList.size(); k++){
+                if(todayTemList.get(i).getMember_idx() == todayTemList.get(k).getMember_idx() ){
+                    todayTemList.remove(k);
+                }
+            }
+        }
+
+        count = todayTemList.size();
+
+        return count;
+    }
+
 
     @Override
     public int getTodayCountMemberOf37(String temperature_date){
 
         ArrayList<TemperatureBasicVo> temList =  temperatureMapper.selectAllTodayByTemperatureDate(temperature_date);
 
-        int count = 0;
+        int count;
 
-        for(TemperatureBasicVo tem : temList){
-            
-            if(tem.getTemperature_tem() >= 37 ){
-                count ++;
+        ArrayList<Integer> memberidxList = new ArrayList<Integer>();
+        
+        ArrayList<Integer> removeOverlapList = new ArrayList<Integer>();
+
+        for(TemperatureBasicVo memberList : temList){
+            memberidxList.add(memberList.getMember_idx());
+        }
+
+        for(int i=0; i<memberidxList.size(); i++){
+            if(!removeOverlapList.contains(memberidxList.get(i))){
+                removeOverlapList.add(memberidxList.get(i));
             }
         }
+       
+        count = removeOverlapList.size();
 
         return count;
     }
@@ -147,6 +176,33 @@ public class MaincontentServiceImpl implements MainContentService {
         average = temperature/count;
 
         return average;
+    }
+
+
+    @Override
+    public int getSelectDayMemNum(TemperatureBasicVo vo) {
+
+        ArrayList<TemperatureBasicVo> temList =  temperatureMapper.selectAllByTemperatureDate(vo);
+
+        int count;
+
+        ArrayList<Integer> memberidxList = new ArrayList<Integer>();
+        
+        ArrayList<Integer> removeOverlapList = new ArrayList<Integer>();
+
+        for(TemperatureBasicVo memberList : temList){
+            memberidxList.add(memberList.getMember_idx());
+        }
+
+        for(int i=0; i<memberidxList.size(); i++){
+            if(!removeOverlapList.contains(memberidxList.get(i))){
+                removeOverlapList.add(memberidxList.get(i));
+            }
+        }
+       
+        count = removeOverlapList.size();
+
+        return count;
     }
 
 

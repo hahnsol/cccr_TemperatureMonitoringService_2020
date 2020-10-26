@@ -13,6 +13,9 @@ public interface MainContentService {
     // 오늘날짜의 체온측정데이터 리스트 가져오기
     public ArrayList<MemTemJoinVO> getTodayContents(String temperature_date);
 
+
+
+    
     // today 체온평균 구하기
     public Float getTodayAverageTem(String temperature_date);
 

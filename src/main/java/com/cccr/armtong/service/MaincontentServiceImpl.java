@@ -112,15 +112,22 @@ public class MaincontentServiceImpl implements MainContentService {
 
         int count;
 
-        for(int i=0; i<todayTemList.size(); i++){
-            for(int k=i+1; k<todayTemList.size(); k++){
-                if(todayTemList.get(i).getMember_idx() == todayTemList.get(k).getMember_idx() ){
-                    todayTemList.remove(k);
-                }
+        ArrayList<Integer> memIdxList = new ArrayList<Integer>();
+
+        ArrayList<Integer> removeOverlap = new ArrayList<Integer>();
+
+
+        for(TemperatureBasicVo temList : todayTemList){
+            memIdxList.add(temList.getMember_idx());
+        }
+
+        for(int i=0; i<memIdxList.size(); i++){
+            if(!removeOverlap.contains(memIdxList.get(i))){
+                removeOverlap.add(memIdxList.get(i));
             }
         }
 
-        count = todayTemList.size();
+        count = removeOverlap.size();
 
         return count;
     }

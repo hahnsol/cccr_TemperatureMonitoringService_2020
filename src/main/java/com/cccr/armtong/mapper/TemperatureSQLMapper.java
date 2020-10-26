@@ -17,9 +17,18 @@ public interface TemperatureSQLMapper {
     @Select("SELECT * FROM TEMPERATURE WHERE temperature_date=#{temperature_date}")
     public ArrayList<TemperatureBasicVo> selectAllByTemperatureDate(TemperatureBasicVo vo);
  
+
+
+
+    
     // 해당멤버의 모든 체온정보 출력
     @Select("SELECT * FROM TEMPERATURE WHERE member_idx=#{member_idx}")
     public ArrayList<TemperatureBasicVo> selectAllByMemberIdx(MemberBasicVo vo);
+
+
+
+
+
 
     // 오늘 37도 이상 멤버의 체온 및 정보 출력
     @Select("SELECT * FROM TEMPERATURE WHERE temperature_tem>=37 AND temperature_date=#{temperature_date}")

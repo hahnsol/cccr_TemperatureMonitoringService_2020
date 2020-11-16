@@ -19,20 +19,20 @@
 - Gradle 6.6.1
 - network: 192.168.0.138/24
 
-
 <br>
   
 * db instance
+
 - OS : ubuntu18.04
 - MariaDB 10.5
 - network: 192.168.0.150/24
 
-
 <br>
 <br>
 
-<container -- kubernetes사용)
+<container -- kubernetes사용>
 * web pod
+
 - OS : ubuntu18.04
 - Openjdk 11
 - Spring boot 2.4.0
@@ -41,12 +41,12 @@
 
 <br>
 
-4. DB table
-
-
-
-<br>
 * db pod 
 - OS : ubuntu18.04
 - MariaDB 10.5
 - network: 192.168.0.50/24 (LB-external ip)
+
+<br>
+
+#### 4. DB table
+![DB table](https://user-images.githubusercontent.com/46100398/96832592-f5100c00-1479-11eb-8964-d360ef6615fa.png)

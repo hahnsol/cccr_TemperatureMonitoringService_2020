@@ -11,8 +11,6 @@
 
 ## 3. 프로젝트 환경
 
-<br>
-
 ### <openstack>
   
 * WEB instance

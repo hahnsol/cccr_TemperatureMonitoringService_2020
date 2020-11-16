@@ -10,8 +10,11 @@
 <br>
 
 ### 3. 프로젝트 환경
+
 <br>
+
 ## <openstack>
+  
 * web instance
 <pre>
 <code>
@@ -38,6 +41,7 @@ network: 192.168.0.150/24
 <br>
 
 <container -- kubernetes사용>
+
 * web pod
 <pre>
 <code>

@@ -124,3 +124,13 @@ network: 192.168.0.50/24 (LB-external ip)
 ### * 쟁점2. 
 ![compare2](https://user-images.githubusercontent.com/46100398/99234942-8c2d7100-2838-11eb-9b76-2adcfe5d045e.PNG)
 
+<br>
+
+## 7. 사용된 ARM 서버
+### * openstack 
+![openstack_server](https://user-images.githubusercontent.com/46100398/99251266-601dea00-2850-11eb-84e4-a23af267024b.PNG)
+
+<br>
+
+### * kubernetes
+![k8s_server](https://user-images.githubusercontent.com/46100398/99251281-6744f800-2850-11eb-8543-95c1dfa600a6.PNG)

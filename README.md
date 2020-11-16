@@ -40,7 +40,7 @@ network: 192.168.0.150/24
 <br>
 <br>
 
-### <container -- kubernetes사용>
+### <container -- kubernetes 사용>
 
 * WEB pod
 <pre>
@@ -117,4 +117,12 @@ network: 192.168.0.50/24 (LB-external ip)
 
 <br>
 
-## 6. 
+## 6. 각 환경의 웹서비스 성능 비교
+### * 쟁점1. jar파일 실행 직 후, 웹브라우저에서 서비스 접근 소요 시간
+![compare1](https://user-images.githubusercontent.com/46100398/99234904-82a40900-2838-11eb-890f-970e446d0047.PNG)
+
+<br>
+
+### * 쟁점2. 
+![compare2](https://user-images.githubusercontent.com/46100398/99234942-8c2d7100-2838-11eb-9b76-2adcfe5d045e.PNG)
+

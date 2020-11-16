@@ -13,36 +13,52 @@
 <br>
 ## <openstack>
 * web instance
- --- OS : ubuntu18.04
- --- Openjdk 11
- --- Spring boot 2.4.0
- --- Gradle 6.6.1
- --- network: 192.168.0.138/24
+<pre>
+<code>
+OS : ubuntu18.04
+Openjdk 11
+Spring boot 2.4.0
+Gradle 6.6.1
+network: 192.168.0.138/24
+</code>
+</pre>
 
 <br>
   
 * db instance
- --- OS : ubuntu18.04
- --- MariaDB 10.5
- --- network: 192.168.0.150/24
+<pre>
+<code>
+OS : ubuntu18.04
+MariaDB 10.5
+network: 192.168.0.150/24
+</code>
+</pre>
 
 <br>
 <br>
 
 <container -- kubernetes사용>
 * web pod
- --- OS : ubuntu18.04
- --- Openjdk 11
- --- Spring boot 2.4.0
- --- Gradle 6.6.1
- --- network: 192.168.0.51/24 (LB-external ip)
+<pre>
+<code>
+OS : ubuntu18.04
+Openjdk 11
+Spring boot 2.4.0
+Gradle 6.6.1
+network: 192.168.0.51/24 (LB-external ip)
+</code>
+</pre>
 
 <br>
 
-* db pod 
- --- OS : ubuntu18.04
- --- MariaDB 10.5
- --- network: 192.168.0.50/24 (LB-external ip)
+* db pod
+<pre>
+<code>
+OS : ubuntu18.04
+MariaDB 10.5
+network: 192.168.0.50/24 (LB-external ip)
+</code>
+</pre>
 
 <br>
 

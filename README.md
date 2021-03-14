@@ -121,10 +121,11 @@ network: 192.168.0.50/24 (LB-external ip)
 
 <br>
 
-### * 쟁점2. 
+### * 쟁점2 서비스가 가동된 이 후, 웹브라우저에서 서비스 접근 소요 시간. 
 ![compare2](https://user-images.githubusercontent.com/46100398/99234942-8c2d7100-2838-11eb-9b76-2adcfe5d045e.PNG)
 
 <br>
+
 
 ## 7. 사용된 ARM 서버
 ### * openstack 

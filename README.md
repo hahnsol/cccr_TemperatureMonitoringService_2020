@@ -1,3 +1,5 @@
+# * 프로젝트 과정은 Wiki를 참고해 주세요!
+
 ## 1. 프로젝트 명 
 > ARM 서버 기반의 클라우드 환경(opensatck, container--kubernetes)의 자동체온측정 데이터 모니터링 웹서비스
 
